@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f0f0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: aqua;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: blueviolet;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: hotpink;
+  background-color: lime;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+#conteudoPrincipal {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  text-align: justify;
+  background-color: yellowgreen;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-around;
+  background-color: tomato;
+}
+
+main section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+#projetos {
+  display: flex;
+  flex-direction: column;
+  background-color: lightcoral;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.cardProjetos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* height: 100%; */
+  background-color: lightblue;
+}
+
+.projeto {
+  /* background-color: thistle; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+}
+
+.projeto p {
+  font-size: 18px;
+  width: 80%;
+  text-align: justify;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: aqua;
+}
