@@ -1,0 +1,71 @@
+/* 
+Usamos Grid para criar layouts mais complexos, onde os elementos são posicionados em uma grade, e podemos usar propriedades como grid-template-columns e grid-template-rows para definir o tamanho das colunas e linhas, e grid-area para posicionar os elementos dentro da grade.
+
+Usamos flexbox para criar layouts mais simples, onde os elementos são posicionados em linha ou coluna, e podemos usar propriedades como justify-content e align-items para posicionar os elementos dentro do container.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#conteiner {
+  display: grid;
+  /* Criar as areas -> nesse exemplo criamos 3 areas com 3 linhas */
+  grid-template-areas:
+    'header header header'
+    'main main aside'
+    'footer footer footer';
+}
+
+/* exemplo para centralizar div com grid 
+{
+  display: grid;
+  place-items: center;
+} */
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* Nomeia a area */
+  grid-area: header;
+  background-color: aquamarine;
+}
+
+main {
+  height: 100vh;
+  /* Nomeia a area */
+  grid-area: main;
+  background-color: lightblue;
+}
+
+aside {
+  /* Nomeia a area */
+  grid-area: aside;
+  background-color: lightcoral;
+}
+
+footer {
+  /* Nomeia a area */
+  grid-area: footer;
+  background-color: lightgreen;
+}
+
+/* 
+  #conteiner {
+  display: grid;
+  /* Criar as colunas */
+/* Podemos usar PX e FR (Fração da tela total) */
+/* grid-template-columns: repeat(3, 1fr); */
+/* grid-template-columns: repeat(3, 200px); */
+/* Criar as linhas */
+/* Podemos usar PX e FR (Fração da tela total) */
+/* grid-template-rows: repeat(3, 200px); */
+/* } */

@@ -1,0 +1,159 @@
+/* Inicio do css padrão MODELO MOBILE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f0f0;
+}
+
+header {
+  gap: 10px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  flex-direction: row;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: blueviolet;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: hotpink;
+  background-color: lime;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+#conteudoPrincipal {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  height: 100vh;
+  text-align: justify;
+  justify-content: space-around;
+  background-color: yellowgreen;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: tomato;
+}
+
+main section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+#projetos {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: lightcoral;
+  justify-content: space-around;
+}
+
+.cardProjetos {
+  gap: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.projeto {
+  background-color: lightgreen;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 300px;
+}
+
+.projeto p {
+  font-size: 18px;
+  width: 80%;
+  text-align: justify;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: aqua;
+}
+/* final do css padrão */
+
+/* Inicio do css para MODELO TABLET */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  header {
+    flex-direction: row;
+  }
+  #conteudoPrincipal {
+    font-size: 20px;
+
+  }
+  #projetos {
+    padding: 20px;
+  }
+
+  .projeto {
+    padding: 20px;
+  }
+  .projeto p {
+    font-size: 20px;
+  }
+}
+/* final do css para MODELO TABLET */
+
+/* Inicio do css para MODELO TABLET GRANDE e NOTEBOOK */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  header {
+    flex-direction: row;
+  }
+  #conteudoPrincipal {
+    font-size: 20px;
+    justify-content: space-evenly;
+
+  }
+  #projetos {
+    padding: 20px;
+  }
+  .cardProjetos {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 10px;
+  }
+  .sobre {
+    display: flex;
+    gap: 20px;
+  }
+  .projeto {
+   padding: 10px;
+  }
+  .projeto p {
+    font-size: 20px;
+  }
+}
+/* final do css para MODELO TABLET GRANDE e NOTEBOOK */
