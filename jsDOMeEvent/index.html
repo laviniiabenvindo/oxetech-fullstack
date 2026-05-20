@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM e eventos</title>
+</head>
+
+<style>
+  #caixa {
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+</style>
+
+<body>
+  <header>
+    <h1 tabindex="0" onclick="click()">DOM e eventos</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">DOM</a></li>
+        <li><a href="#">Eventos</a></li>
+      </ul>
+      <div>
+        <button id="dark-mode">Click</button>
+      </div>
+    </nav>
+    <main>
+      <aside>
+        <h2>O que é o DOM?</h2>
+        <p>O DOM (Document Object Model) é uma representação em árvore de um documento HTML ou XML. Ele permite que os desenvolvedores acessem e manipulem a estrutura, estilo e conteúdo de uma página web usando JavaScript.</p>
+        <h2>Eventos</h2>
+        <p>Eventos são ações ou ocorrências que acontecem no navegador, como cliques, movimentos do mouse, teclas pressionadas, entre outros. O JavaScript pode ser usado para ouvir esses eventos e executar funções específicas quando eles ocorrem.</p>
+      </aside>
+      <section>
+        <form action="">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+          <button type="submit">Enviar</button>
+        </form>
+        <p id="resposta"></p>
+      </section>
+    </main>
+  </header>
+  <div tabindex="0" id="caixa">
+    <p>Eu sou uma caixa</p>
+  </div>
+
+  <script>
+    // Manipulação de texto
+    const h1 = document.querySelector('h1');
+    // Manipulação de estilo
+    const main = document.querySelector('main');
+
+    const caixa = document.getElementById('caixa');
+
+    const corpo = document.body;
+    const darkModeButton = document.getElementById('dark-mode');
+
+    const nome = document.getElementById('nome');
+    const email = document.getElementById('email');
+    const btnSubmit = document.querySelector('button[type="submit"]');
+    const resposta = document.getElementById('resposta');
+    btnSubmit.addEventListener('click', (event)=>{
+      event.preventDefault(); // Evita o envio do formulário
+      if (nome.value === '' || email.value === '') {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      } else if (!email.value.includes('@')) {
+        alert('Por favor, insira um email válido.');
+        return;
+      }
+
+      alert("Dados enviados com sucesso!");
+      resposta.innerText = `Olá, ${nome.value}! Seu email é ${email.value}.`;
+      nome.value = '';
+      email.value = '';
+    })
+
+
+
+
+    // Só muda o texto, sem interpretar as tags HTML
+    h1.innerText = ' Aprendendo JavaScript';
+    // Interpreta as tags HTML, ou seja, o texto é renderizado como HTML
+    h1.innerHTML = ' <p>Aprendendo <em>JavaScript</em> </p>';
+
+    main.style.backgroundColor = 'lightblue';
+    main.style.fontSize = '30px';
+    main.style.display = 'flex';
+    main.style.flexDirection = 'column';
+
+
+    // Eventos
+    // Evendo de mouse em entrada de caixa
+    caixa.addEventListener('mouseenter', () => {
+      caixa.style.backgroundColor = 'lightgreen';
+      caixa.innerText = 'Você entrou na caixa!';
+      caixa.style.color = 'white';
+    })
+
+    // Evendo de mouse em saida de caixa
+    caixa.addEventListener('mouseout', () => {
+      caixa.style.backgroundColor = 'lightgray';
+      caixa.innerText = 'Eu sou uma caixa';
+      caixa.style.color = 'black';
+    })
+
+    // Evento de clique na caixa
+    caixa.addEventListener('click', () => {
+      caixa.style.backgroundColor = 'lightcoral';
+      caixa.innerText = 'Você clicou na caixa!';
+      caixa.style.color = 'white';
+    });
+
+    // Evento de teclado na caixa
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'space') {
+        caixa.style.backgroundColor = 'lightcoral';
+        caixa.innerText = 'Você pressionou Espaço!';
+        caixa.style.color = 'white';
+      }
+    });
+
+    // Evento de clique no botão para alternar o modo escuro
+    darkModeButton.addEventListener('click', () => {
+      // Alterna a classe 'dark-mode' no corpo do documento
+      corpo.classList.toggle('dark-mode');
+    });
+
+  </script>
+</body>
+
+</html>
