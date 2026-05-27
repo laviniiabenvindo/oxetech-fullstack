@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays e Loops</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="flex flex-col justify-between items-center w-full h-screen bg-amber-600 p-3">
+  <h1 class="flex justify-center text-4xl font-bold">Arrays E Loops</h1>
+  <!-- Atividade bloco 1 - Arrays e seus metodos -->
+  <form class="flex gap-4 flex-col rounded-4xl w-3xs h-52 justify-center items-center bg-amber-700" action="">
+    <legend>Formulario</legend>
+    <input class="bg-amber-950 rounded-3xl p-4 text-white" type="text" id="nome" placeholder="Digite um nome">
+    <button class="bg-amber-950 rounded-3xl p-2 text-white" type="submit">Enviar</button>
+  </form>
+
+  <!-- Atividade bloco 2 - Loops -->
+  <section>
+    <h2>Lista de Convidados</h2>
+    <p id="list"></p>
+  </section>
+
+  <!-- Atividade bloco 3 - Array de objetos -->
+  <form class="flex gap-4 flex-col rounded-4xl w-3xs h-52 justify-center items-center bg-amber-700" action="" id="formText">
+    <input class="bg-white text-black" type="text" id="nome">
+    <input class="bg-white text-black" type="text" id="passaword">
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+
+    const formText = document.querySelector('#formText');
+    const nome = document.querySelector('#nome');
+    const passaword = document.querySelector('#passaword');
+    let mensagem = [];
+
+    formText.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nomeUser = nome.value;
+      const passawordUser = passaword.value;
+      if (nomeUser == "" && passawordUser == "") {
+        alert("por favor, preencha todos os campos");
+      } else {
+        mensagem.push({ nome: nomeUser, passaword: passawordUser })
+        console.log(mensagem);
+        alert("Dados enviados com sucesso!");
+        nome.value = "";
+        senha.value = "";
+      }
+    })
+
+    const form = document.querySelector('form');
+    const input = document.querySelector('#nome');
+    let nomes = [];
+    // Adiciona um evento de submit ao formulário para capturar o nome digitado e adicioná-lo ao Array de nomes
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = input.value;
+      if (nome == "") {
+        alert("por favor, digite um nome");
+      } else {
+        nomes.push(nome); // Adiciona o nome digitado ao Array de nomes
+        console.log(nomes);
+        input.value = "";
+      }
+    })
+    let produto = [
+      { nome: "Camiseta", preco: 29.99 },
+      { nome: "Calça", preco: 49.99 },
+      { nome: "Tênis", preco: 89.99 }
+    ];
+
+    document.write(produto[0].nome, " - R$ ", produto[0].preco) // Acessa o nome e o preço do primeiro produto (Camiseta) e os exibe no documento
+    console.log(produto[0].preco) // Acessa o nome do primeiro produto (Camiseta);
+
+    // Arrays e métodos de Array
+    let nomesExemplos = ["Lavínia", "Maria", "João", "Pedro", "Ana", 'julia', 'juliana', 'julio', 'juliana', 'julio', 'juliana', 'julio'];
+    console.log(nomesExemplos) // Acessa todo o Array
+    console.log(nomesExemplos[2]) // Acessa o elemento do Array na posição 2 (João)
+    console.log(nomesExemplos.length) // Acessa o tamanho do Array (6)
+    console.log(nomesExemplos.push("Carlos")) // Adiciona um elemento ao final do Array (Carlos)
+    console.log(nomesExemplos) // Acessa todo o Array atualizado
+    console.log(nomesExemplos.pop()) // Remove o último elemento do Array (Carlos)
+    console.log(nomesExemplos) // Acessa todo o Array atualizado
+    console.log(nomesExemplos.unshift("Sofia")) // Remove o primeiro elemento do Array (Lavínia)
+    console.log(nomesExemplos) // Acessa todo o Array atualizado
+    console.log(nomesExemplos.sort()) // Ordena o Array em ordem alfabética
+    console.log(nomesExemplos.reduce((acc, nome) => acc + " " + nome)) // Reduz o Array a uma única string concatenando os nomes
+
+    const list = document.querySelector('#list');
+
+    for (let i = 0; i < nomesExemplos.length; i++) {
+      list.innerHTML += `<li>${nomesExemplos[i]}</li>` // Acessa cada elemento do Array usando um loop for e adiciona cada nome como um item de lista no HTML
+    }
+    nomesExemplos.forEach((nome) => console.log(nome)) // Itera sobre cada elemento do Array e imprime o nome no console usando forEach
+
+    // Loop for para acessar cada elemento do Array de nomesExemplos
+    for (let i = 0; i < nomesExemplos.length; i++) {
+      console.log(nomesExemplos[i]) // Acessa cada elemento do Array usando um loop for
+    }
+
+    let senhaUser = 0;
+
+    // Loop while para solicitar a senha do usuário até que seja digitada a senha correta (1234)
+    while (senhaUser != 1234) {
+      senhaUser = prompt("Digite a senha:")
+    }
+
+    // Loop do-while para contar de 0 a 9
+    let numeros = 0;
+    do {
+     console.log(numeros)
+    } while (numeros < 10) {
+      numeros++
+    }
+
+
+  </script>
+</body>
+
+</html>
