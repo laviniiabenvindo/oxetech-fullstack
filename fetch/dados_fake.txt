@@ -1,0 +1,20 @@
+const moedas = [
+    {
+        "symbol": "btc",
+        "name": "Bitcoin",
+        "image": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
+        "current_price": 65432.10
+    },
+    {
+        "symbol": "eth",
+        "name": "Ethereum",
+        "image": "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
+        "current_price": 3456.78
+    },
+    {
+        "symbol": "sol",
+        "name": "Solana",
+        "image": "https://assets.coingecko.com/coins/images/4128/large/solana.png",
+        "current_price": 145.20
+    }
+];
